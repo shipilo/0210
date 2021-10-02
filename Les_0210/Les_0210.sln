@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Les_0210", "Les_0210.csproj", "{4570CC70-A7DF-451E-9D9F-CF366E1B4C07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Met_0210", "..\Met_0210\Met_0210.csproj", "{5B32F0F3-F2C1-4A16-A1EB-B7CCE8DB6E98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Home_0210", "..\Home_0210\Home_0210.csproj", "{40831E7E-213A-4F04-841B-CC2EB1B54DFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4570CC70-A7DF-451E-9D9F-CF366E1B4C07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4570CC70-A7DF-451E-9D9F-CF366E1B4C07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4570CC70-A7DF-451E-9D9F-CF366E1B4C07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4570CC70-A7DF-451E-9D9F-CF366E1B4C07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B32F0F3-F2C1-4A16-A1EB-B7CCE8DB6E98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B32F0F3-F2C1-4A16-A1EB-B7CCE8DB6E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B32F0F3-F2C1-4A16-A1EB-B7CCE8DB6E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B32F0F3-F2C1-4A16-A1EB-B7CCE8DB6E98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40831E7E-213A-4F04-841B-CC2EB1B54DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40831E7E-213A-4F04-841B-CC2EB1B54DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40831E7E-213A-4F04-841B-CC2EB1B54DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40831E7E-213A-4F04-841B-CC2EB1B54DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFD9D814-500A-42F9-B3C3-DF33D1A6086E}
+	EndGlobalSection
+EndGlobal

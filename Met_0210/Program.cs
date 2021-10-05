@@ -8,7 +8,7 @@ namespace Met_0210
         {
             string str1, str2;
             decimal factorial;
-            int n, num1, num2, num3;
+            int n;
             try
             {            
                 Console.WriteLine("Упаражненеие 5.1\nДва целых числа:");

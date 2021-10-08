@@ -8,6 +8,7 @@ namespace Home_0210
         static List<List<int>> edgesWays = new List<List<int>>();
         static void Main(string[] args)
         {
+            int v_start, v_end;
             int[][] edgesOfv;
             List<int[]> edges = new List<int[]>();
             int[] weights;
@@ -15,7 +16,7 @@ namespace Home_0210
             int[] numbers;
             Random rnd = new Random();
             
-            Console.WriteLine("Быстрая сортировка\nВведите целые числа через пробел:");
+            Console.WriteLine("Быстрая сортировка.\nВведите целые числа через пробел:");
         Start1:
             try
             {
@@ -34,7 +35,8 @@ namespace Home_0210
                 goto Start1;
             }
             
-            Console.WriteLine($"\nОбход графа в глубину от вершины 0 к вершине 9.\n");            
+            Console.WriteLine($"\nОбход графа в глубину: 10 вершин с номерами от 0 до 9.\n");   
+            
             edgesOfv = new int[10][];
             edgesOfv[0] = new int[] { 1, 2, 3 };
             edgesOfv[1] = new int[] { 0, 4, 6 };
@@ -63,6 +65,7 @@ namespace Home_0210
             edges.Add(new int[] { 7, 8 });
             edges.Add(new int[] { 7, 9 });
             edges.Add(new int[] { 8, 9 });
+
             Console.WriteLine("Длины всех ребёр равны:");
             weights = new int[17];
             for (int i = 0; i < weights.Length; i++)
@@ -70,16 +73,37 @@ namespace Home_0210
                 weights[i] = rnd.Next(1, 21);
                 Console.WriteLine($"{String.Join(" -> ", edges[i])}: {weights[i]}");
             }
-            Console.WriteLine("\nПеребор всех возможных путей и их суммарная длина:");
-            GraphStep(edgesOfv, 0, 0);
-            for(int i = 0; i < edgesWays.Count; i++)
+
+        Start2:
+            try
             {
-                if(edgesWays[i][edgesWays[i].Count - 1] != 9)
+                Console.Write("\nВершина начальная: ");
+                v_start = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Вершина конечная: ");
+                v_end = Convert.ToInt32(Console.ReadLine());
+                if(v_start < 0 ||v_start > 9 || v_end < 0 || v_end > 9)
+                {
+                    throw new FormatException();
+                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Ещё раз");
+                goto Start2;
+            }
+
+            Console.WriteLine($"\nПеребор всех возможных путей от {v_start} к {v_end} и их суммарная длина:");
+            GraphStep(edgesOfv, v_start, v_start, v_end, 0);
+
+            for (int i = 0; i < edgesWays.Count; i++)
+            {
+                if (edgesWays[i][edgesWays[i].Count - 1] != v_end)
                 {
                     edgesWays.Remove(edgesWays[i]);
                     i--;
                 }
             }
+
             int sum_min = 1000;
             foreach (List<int> way in edgesWays)
             {               
@@ -132,25 +156,24 @@ namespace Home_0210
             element1 = element2;
             element2 = element;
         }
-        static void GraphStep(int[][] array, int edge, int k)
+        static void GraphStep(int[][] array, int v, int v_start, int v_end, int k)
         {
-            if (k == 0)
+            if (v == v_start)
             {
                 edgesWays.Add(new List<int>());
-                edgesWays[0].Add(0);
+                edgesWays[0].Add(v_start);
             }
-            for (int i = 0; i < array[edge].Length; i++)
+            for (int i = 0; i < array[v].Length; i++)
             {                                
-                if (!edgesWays[k].Contains(array[edge][i]))
+                if (!edgesWays[k].Contains(array[v][i]))
                 {
                     edgesWays.Add(new List<int>());
                     edgesWays[edgesWays.Count - 1].AddRange(edgesWays[k]);
-                    edgesWays[edgesWays.Count - 1].Add(array[edge][i]);
-                    if (array[edge][i] == 9) return;
-                    GraphStep(array, array[edge][i], edgesWays.Count - 1);
+                    edgesWays[edgesWays.Count - 1].Add(array[v][i]);
+                    if (array[v][i] == v_end) return;
+                    GraphStep(array, array[v][i], v_start, v_end, edgesWays.Count - 1);
                 }
-            }
-
+            }            
         }
     }
 }

@@ -19,6 +19,7 @@ namespace Les_0210
             Bitmap[] images = 
             {
                 new Bitmap(@"Img\0.png"),
+
                 new Bitmap(@"Img\1.png"),
                 new Bitmap(@"Img\2.png"),
                 new Bitmap(@"Img\3.png"),
@@ -29,6 +30,9 @@ namespace Les_0210
                 new Bitmap(@"Img\8.png"),
                 new Bitmap(@"Img\9.png")
             };
+            
+            int[] u = { 1, 2, 3, 4 };
+
             try
             {                
                 Console.WriteLine("1.");

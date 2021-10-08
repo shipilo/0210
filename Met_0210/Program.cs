@@ -203,18 +203,6 @@ namespace Met_0210
         }
         static int GreatestCommonFactor(int num1, int num2, int num3)
         {
-            // работает медленнее
-            /*int num_half = Math.Min(num1, num2);
-            num_half = Math.Min(num_half, num3) / 2;
-            for (int i = num_half; i >= 1; i--)
-            {
-                if (num1 % i == 0 && num2 % i == 0 && num3 % i == 0)
-                {
-                    return i;
-                }
-            }
-            return 1;*/
-
             return GreatestCommonFactor(GreatestCommonFactor(num1, num2), num3);
         }
         static int Fibonacci(int n1, int n2, int k, int n)
